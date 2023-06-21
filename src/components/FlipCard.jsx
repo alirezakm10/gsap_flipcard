@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 import { gsap } from 'gsap';
 import styles from './flipcard.module.css';
 import Image from 'next/image';
+import Link from 'next/link'
 
 const FlipCard = () => {
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(true);
   const cardRef = React.useRef(null);
 
   const handleMouseEnter = () => {
@@ -41,8 +42,8 @@ const FlipCard = () => {
               />
             </div>
             <div className={styles.cardBody}>
-              <h3>Card title</h3>
-              <p>
+              <h1 className={styles.header} >Card title</h1>
+              <p className={styles.desc}>
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
@@ -53,13 +54,25 @@ const FlipCard = () => {
           </div>
         </div>
         <div className={`${styles.face} ${styles.back}`}>
-          <div className={styles.cardContent}>
+        <div className={styles.cardContent}>
+          <h1 className={styles.header}>tyhd</h1>
+          <p className='subtitle'>lorem ipsum content </p>
+            <div className={styles.backImageContainer}>
+              <Image
+                src="/rick.jpg"
+                alt="rick"
+               fill={true}
+              />
+            </div>
             <div className={styles.cardBody}>
-              <h3>Back Side</h3>
-              <p>This is the back side of the card.</p>
-              <button className={styles.btn}>
-                Go somewhere
-              </button>
+              <p className={styles.desc}>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <div className={styles.links_container} >
+              <Link href='/' >a link</Link>
+              <Link href='/' >b link</Link>
+              </div>
             </div>
           </div>
         </div>
