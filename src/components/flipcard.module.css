@@ -1,7 +1,8 @@
 .flipCard {
   position: relative;
-  perspective: 1000px;
-  width: 348px;
+  perspective: 700px;
+  width: 100%;
+  max-width: 348px;
   height: 400px;
   margin: 20px;
   text-align: left;
@@ -32,14 +33,15 @@
   border-radius: 10px;
   background: #fff;
   position: absolute;
+  overflow: hidden;
   color: #333;
   display: flex;
 }
 
 .back {
-  border-radius: 10px;
   background: #fff;
   position: absolute;
+  overflow: hidden;
   color: #333;
   transform: rotateY(180deg);
   display: flex;
@@ -57,20 +59,23 @@
 }
 
 .imageContainer {
-  border-radius: 10px 10px 0 0;
   position: relative;
   top: 0;
   overflow: hidden;
-  width: 348px;
-  height: 180px;
-  min-height: 180px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
 }
-.backImageContainer{
+
+.backImageContainer {
   position: relative;
   overflow: hidden;
-  width: 348px;
-  height: 180px;
-  min-height: 180px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px 10px 0 0;
+}
+
+.cardImage {
+  border-radius: inherit;
 }
 
 .cardBody {
